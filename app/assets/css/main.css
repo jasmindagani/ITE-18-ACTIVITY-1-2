@@ -1,0 +1,78 @@
+:root {
+  --forest: #3b5220;
+  --moss: #5f7d2e;
+  --olive: #7a9a3f;
+  --lime: #a9c46c;
+  --sage: #cfe0a3;
+  --mint: #e6efc9;
+  --cream: #fffdf3;
+  --ink: #2c3a17;
+  --hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans: 'Nunito', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  line-height: 1.6;
+  /* notebook graph paper */
+  background-color: #f7faea;
+  background-image:
+    linear-gradient(rgba(95, 125, 46, .10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 125, 46, .10) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.site { min-height: 100vh; display: flex; flex-direction: column; }
+.site main { flex: 1; }
+
+.container { width: min(1120px, 92%); margin-inline: auto; }
+.section { padding: 3.5rem 0; }
+.grid { display: grid; gap: 2rem 1.6rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+.hand { font-family: var(--hand); }
+
+/* decorative patterns from the scrapbook look */
+.gingham {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(90deg, rgba(122, 154, 63, .45) 50%, transparent 50%),
+    linear-gradient(rgba(122, 154, 63, .45) 50%, transparent 50%);
+  background-size: 36px 36px;
+}
+.checker {
+  background: conic-gradient(var(--moss) 25%, var(--cream) 0 50%, var(--moss) 0 75%, var(--cream) 0) 0 0 / 56px 56px;
+}
+.star {
+  background: var(--olive);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.tape {
+  position: absolute;
+  width: 92px;
+  height: 26px;
+  background: rgba(169, 196, 108, .75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, .25) 0 6px, transparent 6px 12px);
+}
+
+.section-head { margin-bottom: 2.2rem; }
+.section-head .hand { display: block; font-size: 1.7rem; line-height: 1; color: var(--moss); }
+.section-head h2 { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--forest); }
+
+/* page banner used on inner pages */
+.page-banner { position: relative; background: var(--olive); color: var(--cream); padding: 3.2rem 0 3rem; overflow: hidden; }
+.page-banner::before { content: ''; position: absolute; left: 0; top: 0; width: 150px; height: 120px; border-radius: 0 0 80px 0; background: conic-gradient(var(--moss) 25%, var(--cream) 0 50%, var(--moss) 0 75%, var(--cream) 0) 0 0 / 40px 40px; }
+.page-banner .container { position: relative; padding-left: clamp(0px, 14vw, 150px); }
+.page-banner .hand { font-size: 1.7rem; line-height: 1; color: var(--sage); }
+.page-banner h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; }
+.page-banner p.sub { max-width: 52ch; color: #eef5d6; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
